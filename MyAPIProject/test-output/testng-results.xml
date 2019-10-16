@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="265" started-at="2019-10-15T08:35:58Z" finished-at="2019-10-15T08:35:58Z">
+  <suite name="Default suite" duration-ms="6290" started-at="2019-10-16T12:11:48Z" finished-at="2019-10-16T12:11:54Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="265" started-at="2019-10-15T08:35:58Z" finished-at="2019-10-15T08:35:58Z">
-      <class name="Files.GetTimestamp">
-        <test-method status="PASS" signature="timeStamp()[pri:0, instance:Files.GetTimestamp@4b4523f8]" name="timeStamp" duration-ms="144" started-at="2019-10-15T14:05:58Z" finished-at="2019-10-15T14:05:58Z">
+    <test name="Default test" duration-ms="6290" started-at="2019-10-16T12:11:48Z" finished-at="2019-10-16T12:11:54Z">
+      <class name="Test.TrendingHashTags">
+        <test-method status="PASS" signature="DisplayHashtag()[pri:0, instance:Test.TrendingHashTags@4b4523f8]" name="DisplayHashtag" duration-ms="6244" started-at="2019-10-16T17:41:48Z" finished-at="2019-10-16T17:41:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- timeStamp -->
-      </class> <!-- Files.GetTimestamp -->
+        </test-method> <!-- DisplayHashtag -->
+      </class> <!-- Test.TrendingHashTags -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
