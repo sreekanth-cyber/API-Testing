@@ -8,7 +8,6 @@ import java.util.Properties;
 
 import org.testng.annotations.Test;
 
-import Files.ProvideHashTag;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
@@ -21,66 +20,47 @@ public class TrendingHashTags {
 	@Test
 	public void DisplayHashtag() throws IOException
 	{
-		ProvideHashTag p = new ProvideHashTag();
+
 		prop = new Properties();
 		FileInputStream fis = new FileInputStream("C:\\sree\\MyAPIProject\\src\\Files\\data.properties");
 		prop.load(fis);
 		
-		RestAssured.baseURI = "https://api.twitter.com/1.1/search/tweets.json";
-		Response res = given().auth().oauth(prop.getProperty("ConsumerKey"),prop.getProperty("ConsumerSecret"),prop.getProperty("Token"),prop.getProperty("TokenSecret")).
-		param("q",p.provideHashtag()).
+		RestAssured.baseURI="https://api.twitter.com/1.1/trends";
+		Response res=given().auth().oauth(prop.getProperty("ConsumerKey"),prop.getProperty("ConsumerSecret"),prop.getProperty("Token"),prop.getProperty("TokenSecret")).	
 		when().
-		get().
-		then().assertThat().statusCode(200).and().contentType(ContentType.JSON).
+		get("/available.json").then().assertThat().statusCode(200).contentType(ContentType.JSON).
 		extract().response();
 		
-		String response = res.asString();
+		String response=res.asString();
 		//System.out.println(response);
-		
-		JsonPath js = new JsonPath(response);
-		int count = js.get("statuses.size()");
-		//System.out.println(count);
-		
-		int c1=0,c2=0,c3=0,c4=0;String resp;
-		
+		JsonPath js=new JsonPath(response);
+		int count=js.get("size()");
 		for(int i=0;i<count;i++)
 		{
-			String place = js.get("statuses["+i+"].user.location").toString();
-			if(place.contains("India"))
+			String country=js.get("["+i+"].country").toString();
+			if(country.equalsIgnoreCase(prop.getProperty("location1")))
 			{
-				c1++;
-				if(c1<5)
-				{
-					resp = js.get("statuses["+i+"]").toString();
-					System.out.println(resp);
-				}
-			}
-			if(place.contains("Israel"))
-			{
-				c2++;
-				if(c2<5)
-				{
-					resp = js.get("statuses["+i+"]").toString();
-					System.out.println(resp);
-				}
-			}
-			if(place.contains("America"))
-			{
-				c3++;
-				if(c3<5)
-				{
-					resp = js.get("statuses["+i+"]").toString();
-					System.out.println(resp);
-				}
-			}
-			if(place.contains("United Kingdom"))
-			{
-				c4++;
-				if(c4<5)
-				{
-					resp = js.get("statuses["+i+"]").toString();
-					System.out.println(resp);
-				}
+				String id=js.get("["+i+"].parentid").toString();
+				Response res1=given().auth().oauth(prop.getProperty("ConsumerKey"),prop.getProperty("ConsumerSecret"),prop.getProperty("Token"),prop.getProperty("TokenSecret")).
+						param("id",id).
+						when().
+						get("/place.json").then().assertThat().statusCode(200).contentType(ContentType.JSON).
+						extract().response();
+						
+						String response1=res1.asString();
+						//System.out.println(response1);
+						JsonPath js1=new JsonPath(response1);
+						int count1=js1.get("["+0+"].trends.size()");
+						for(int j=0;j<count1;j++)
+						{
+							String Hashtag = js1.getString("["+0+"].trends["+j+"].name");
+							String actual = js1.getString("["+0+"].trends["+j+"]");
+							if(Hashtag.charAt(0)=='#' && j<=5)
+							{
+								System.out.println(actual);
+							}
+						}
+						break;
 			}
 		}
 	}
