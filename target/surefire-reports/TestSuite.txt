@@ -1,0 +1,46 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 7, Errors: 0, Skipped: 0, Time elapsed: 3.859 s <<< FAILURE! - in TestSuite
+createTweet(Test.CreatingTweet)  Time elapsed: 2.578 s  <<< FAILURE!
+java.lang.NoClassDefFoundError: com/github/scribejava/core/model/Token
+	at Test.CreatingTweet.createTweet(CreatingTweet.java:29)
+Caused by: java.lang.ClassNotFoundException: com.github.scribejava.core.model.Token
+	at Test.CreatingTweet.createTweet(CreatingTweet.java:29)
+
+searchTweet(Test.SearchingTweet)  Time elapsed: 0.046 s  <<< FAILURE!
+java.lang.NoClassDefFoundError: com/github/scribejava/core/model/Token
+	at Test.SearchingTweet.searchTweet(SearchingTweet.java:31)
+Caused by: java.lang.ClassNotFoundException: com.github.scribejava.core.model.Token
+	at Test.SearchingTweet.searchTweet(SearchingTweet.java:31)
+
+weatherTweet(Test.WeatherUpdate)  Time elapsed: 0.016 s  <<< FAILURE!
+java.lang.NoClassDefFoundError: com/github/scribejava/core/model/Token
+	at Test.WeatherUpdate.weatherTweet(WeatherUpdate.java:31)
+Caused by: java.lang.ClassNotFoundException: com.github.scribejava.core.model.Token
+	at Test.WeatherUpdate.weatherTweet(WeatherUpdate.java:31)
+
+searchTweet(Test.DisplayingUsername)  Time elapsed: 0.047 s  <<< FAILURE!
+java.lang.NoClassDefFoundError: com/github/scribejava/core/model/Token
+	at Test.DisplayingUsername.searchTweet(DisplayingUsername.java:31)
+Caused by: java.lang.ClassNotFoundException: com.github.scribejava.core.model.Token
+	at Test.DisplayingUsername.searchTweet(DisplayingUsername.java:31)
+
+DisplayHashtag(Test.TrendingHashTags)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.NoClassDefFoundError: com/github/scribejava/core/model/Token
+	at Test.TrendingHashTags.DisplayHashtag(TrendingHashTags.java:31)
+Caused by: java.lang.ClassNotFoundException: com.github.scribejava.core.model.Token
+	at Test.TrendingHashTags.DisplayHashtag(TrendingHashTags.java:31)
+
+searchTweet(Test.ListTweetsofUser)  Time elapsed: 0.046 s  <<< FAILURE!
+java.lang.NoClassDefFoundError: com/github/scribejava/core/model/Token
+	at Test.ListTweetsofUser.searchTweet(ListTweetsofUser.java:31)
+Caused by: java.lang.ClassNotFoundException: com.github.scribejava.core.model.Token
+	at Test.ListTweetsofUser.searchTweet(ListTweetsofUser.java:31)
+
+searchTweet(Test.BlockUser)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.NoClassDefFoundError: com/github/scribejava/core/model/Token
+	at Test.BlockUser.searchTweet(BlockUser.java:32)
+Caused by: java.lang.ClassNotFoundException: com.github.scribejava.core.model.Token
+	at Test.BlockUser.searchTweet(BlockUser.java:32)
+

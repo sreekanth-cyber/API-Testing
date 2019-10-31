@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Suite]">
+  <test name="Test(failed)">
+    <classes>
+      <class name="Test.DisplayingUsername">
+        <methods>
+          <include name="searchTweet"/>
+        </methods>
+      </class> <!-- Test.DisplayingUsername -->
+      <class name="Test.CreatingTweet">
+        <methods>
+          <include name="createTweet"/>
+        </methods>
+      </class> <!-- Test.CreatingTweet -->
+      <class name="Test.BlockUser">
+        <methods>
+          <include name="searchTweet"/>
+        </methods>
+      </class> <!-- Test.BlockUser -->
+      <class name="Test.SearchingTweet">
+        <methods>
+          <include name="searchTweet"/>
+        </methods>
+      </class> <!-- Test.SearchingTweet -->
+      <class name="Test.WeatherUpdate">
+        <methods>
+          <include name="weatherTweet"/>
+        </methods>
+      </class> <!-- Test.WeatherUpdate -->
+      <class name="Test.ListTweetsofUser">
+        <methods>
+          <include name="searchTweet"/>
+        </methods>
+      </class> <!-- Test.ListTweetsofUser -->
+      <class name="Test.TrendingHashTags">
+        <methods>
+          <include name="DisplayHashtag"/>
+        </methods>
+      </class> <!-- Test.TrendingHashTags -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
